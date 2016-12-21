@@ -14,3 +14,26 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+// locale
+var locale = ""
+
+/* init on page load */
+
+$(document).ready(function() {
+  $("span.set-locale").click(function(event) {
+    handleLanguageChange(event)
+  })
+})
+
+function handleLanguageChange(event) {
+  currentLocale = $(".language-selection").data("locale")
+  newLocale = $(event.target).data("locale")
+  if(newLocale != currentLocale) {
+    pathArray = location.pathname.split("/")
+    pathArray[1] = newLocale
+    newPath = pathArray.join("/")
+    window.location.href = newPath
+  }
+}

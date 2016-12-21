@@ -45,3 +45,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+gem 'ckeditor_rails'
+gem 'traco'
+

@@ -10,6 +10,182 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require bootstrap.css
+ *= require welcome.css
  *= require_self
  */
+
+@font-face {
+  font-family: 'Stencil';
+  src: url('Emtype Foundry - GeogrotesqueStencil C Md Regular.otf');
+}
+
+/* general logo */
+
+.logo {
+	background-color: #FFF12D;	
+	color: #000;
+}
+
+.logo h1 {
+	font-family: 'Stencil', sans-serif;	
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 30px;
+	margin: 0px;
+	line-height: 1;
+}
+
+.logo h2 {
+	font-family: 'Open Sans', sans-serif;	
+	text-transform: lowercase;
+	font-weight: normal;
+	font-size: 10px;
+	margin: 0px;
+}
+
+/* navbar */
+
+.navbar {
+	height: 5em;
+}
+
+.navbar .container {
+	margin-left: 0px;
+	margin-right: 0px;
+	width: 100%;
+}
+
+.navbar-default {
+	transition: none;
+}
+
+.navbar-default.navbar-fixed-top, .navbar-default.navbar-shrink {
+	padding: 10px 0;
+	background-color: #000;
+}
+
+.navbar-default .navbar-brand {
+	display: none;
+}
+
+.navbar-shrink .navbar-brand, 
+.navbar-shrink .navbar-brand:hover, 
+.navbar-shrink .navbar-brand:focus {
+	display: block;
+	height: auto;
+	text-transform: uppercase;
+	font-family: 'Stencil', sans-serif;	
+	border-radius: 5px;
+	float: right;
+	width: 200px;
+	background-color: #FFF12D;	
+	color: #000;
+}
+
+.navbar-default .nav li a {
+	font-family: 'Open Sans', sans-serif;
+	text-transform: none;
+	color: #fff;
+}
+
+.navbar-default .nav li a:focus {
+	color: #fff;	
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .nav li a:hover {
+	color: #FFF12D;
+	background-color: #000;
+}
+
+.set-locale {
+  cursor: pointer;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.active-locale {
+  color: #aaa;
+  cursor: default;
+}
+
+
+/* header */
+
+header {
+	height: 100vh;
+}
+
+header .logo-left {
+	border-radius: 5px;
+	float: left;
+	position: relative;
+	top: 100px;
+	padding: 10px;
+	width: 300px;
+	text-align: right;
+	padding-left: 50px;
+}
+
+header .logo-left h1 {
+	font-size: 60px;
+}
+
+header .logo-left h2 {
+	font-size: 15px;
+}
+
+header .intro-text {
+	margin-top: 150px;
+	padding: 10px;
+	background-color: #fff;
+	color: #000;
+	float: right;
+	text-align: left;
+	width: 400px;
+}
+
+header .intro-text .intro-lead {
+	font-family: 'Stencil', sans-serif;		
+	font-style: normal;
+	font-size: 6em;
+	text-transform: uppercase;
+	line-height: 1em;
+}
+
+header .intro-text .intro-sublead {
+	font-family: 'Open Sans', sans-serif;			
+	font-style: normal;
+	font-size: 1em;
+}
+
+/* box */
+
+section#what {
+	background-image: url(/assets/box.jpg);
+}
+
+
+/* action */
+
+section#action {
+	background-image: url(/assets/action.jpg);
+}
+
+/* events & teambuilding */
+
+.events-training-bg {
+	background-image: url(/assets/events.jpg);
+}
+
+/* contact */
+
+section#contact {
+	background-image: url(/assets/contact.jpg);
+}
+
+
+
+
