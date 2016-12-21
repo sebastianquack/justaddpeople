@@ -7,5 +7,6 @@ CKEDITOR.editorConfig = function(config) {
     { name: 'undo', items: ['Undo', 'Redo'] },
     { name: 'document', items: [ 'Source' ] }
   ]
+  config.allowedContent = true
   return true
 }

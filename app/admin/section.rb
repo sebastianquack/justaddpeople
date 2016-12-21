@@ -21,10 +21,8 @@ form do |f|
     f.input :slug
   end
   f.inputs "Content" do
-    f.input :title_de
     f.input :content_de, :input_html => { :class => 'ckeditor' }
 
-    f.input :title_en
     f.input :content_en, :input_html => { :class => 'ckeditor' }
   end
   f.actions

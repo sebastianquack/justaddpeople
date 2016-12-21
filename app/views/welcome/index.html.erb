@@ -29,8 +29,8 @@
                 <%= render :partial => "menu_item", :locals => {:a_section => section("contact")} %>                
             </ul>
         <div class="language-selection" data-locale="<%= I18n.locale %>">
-          <span class="set-locale <%= I18n.locale == :en ? 'active-locale' : '' %>" data-locale="en" >en</span>/
-          <span class="set-locale <%= I18n.locale == :de ? 'active-locale' : '' %>" data-locale="de">de</span>
+          <span class="noselect set-locale <%= I18n.locale == :en ? 'active-locale' : '' %>" data-locale="en" >en</span> /
+          <span class="noselect set-locale <%= I18n.locale == :de ? 'active-locale' : '' %>" data-locale="de">de</span>
         </div>  
 
         </div>
@@ -46,9 +46,8 @@
     <h2><%= fragment("logo subtitle") %></h2>
   </div>
   <div class="intro-text">
-          <div class="intro-lead"><%= fragment("intro lead") %></div>
-          <div class="intro-sublead"><%= fragment("intro sublead") %></div>
-          <!--a href="#<%= @sections.first.slug %>" class="page-scroll btn btn-xl"><%= fragment("intro button") %></a-->
+    <div class="intro-lead"><%= fragment("intro lead") %></div>
+    <div class="intro-sublead"><%= fragment("intro sublead") %></div>
   </div>
 </header>
 
@@ -57,16 +56,23 @@
 <!-- box section -->
 <% what_section = section("what") %>
 <section id="<%= what_section.slug %>" class="bg-light-gray portfolio">
-  <div class="container">
-    <%= what_section.content.html_safe if what_section.content %>
+  
+  <div class="what-contents"><span class="item"></span><span class="num"></span></div>
+  <div class="what-cards">
+    <div class="what-randomize-button noselect"><%= fragment("what randomize") %></div>
+    <div class="what-society-card"><div class="card-content"></div></div>
+    <div class="what-architecture-card"><div class="card-content"></div></div>  
+    <div class="what-missions"><%= fragment("what missions") %></div>
   </div>
+  
 </section>
 
 <!-- Portfolio Grid Section -->
 <% action_section = section("action") %>
 <section id="<%= action_section.slug %>" class="bg-light-gray portfolio">
-    <div class="container">
-      <%= action_section.content.html_safe if action_section.content %>
+      
+    <div class="action-bg">
+      <h1><%= fragment("action title") %></h1>
         
       <% @projects.each do |project| %>
       <div class="row">
@@ -77,15 +83,15 @@
                           <i class="fa fa-plus fa-3x"></i>
                       </div>
                   </div>
-                  <img src="/assets/portfolio/roundicons.png" class="img-responsive" alt="">
+                  <img src="/assets/portfolio/26628458671_6d008dcf53_z.jpg" class="img-responsive" alt="">
               </a>
               <div class="portfolio-caption">
                   <h4><%= project.title %></h4>
-                  <p class="text-muted"><%= project.subtitle %></p>
               </div>
           </div>
       </div>
       <% end %>
+      
     </div>
 </section>
 
@@ -113,10 +119,9 @@
                     <div class="modal-body">
                         <!-- Project Details Go Here -->
                         <h2><%= project.title %></h2>
-                        <p class="item-intro text-muted"><%= project.subtitle %></p>
-                        <img class="img-responsive img-centered" src="/assets/portfolio/roundicons-free.png" alt="">
+                        <img class="img-responsive img-centered" src="/assets/portfolio/26628458671_6d008dcf53_z.jpg" alt="">
                         <div><%= project.description.html_safe if project.description %></div>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
