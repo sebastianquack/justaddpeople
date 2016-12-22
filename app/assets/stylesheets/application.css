@@ -312,6 +312,7 @@ section#action {
 	width: 50%;
 	margin-bottom: 20px;
 	text-align: center;
+	font-weight: normal;
 }
 
 .action-bg h4 {
@@ -376,6 +377,7 @@ section.portfolio .portfolio-item .portfolio-link .portfolio-hover {
 	padding: 20px;
 	margin: 0px;
 	font-size: 50px;
+	font-weight: normal;
 }
 
 .events-training-bg section .logos {
