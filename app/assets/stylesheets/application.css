@@ -343,6 +343,7 @@ section.portfolio .portfolio-item .portfolio-link .portfolio-hover {
 	font-family: 'Stencil', sans-serif;	
 	font-size: 50px;
 	text-transform: uppercase;
+	font-weight: normal;
 }
 
 .btn-primary, .btn-primary:hover {
