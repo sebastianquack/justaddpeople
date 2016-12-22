@@ -300,7 +300,7 @@ section#action {
 .action-bg {
 	width: 100%;
 	background-color: #fff;
-	padding: 20px;
+	padding: 20px 30px;
 }
 
 .action-bg h1 {
@@ -313,6 +313,10 @@ section#action {
 	margin-bottom: 20px;
 	text-align: center;
 	font-weight: normal;
+}
+
+section.portfolio .portfolio-item {
+	margin: 10px;
 }
 
 .action-bg h4 {
@@ -331,6 +335,15 @@ section.portfolio .portfolio-item .portfolio-link .portfolio-hover {
 
 .img-responsive {
 	border-radius: 25px;
+}
+
+.slick-track {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.slick-prev:before, .slick-next:before { 
+    color:#FFF12D !important;
 }
 
 /* modal */
