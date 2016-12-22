@@ -46,3 +46,8 @@ group :development do
 end
 
 gem 'unicorn'
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+gem 'ckeditor_rails'
+gem 'traco'
+

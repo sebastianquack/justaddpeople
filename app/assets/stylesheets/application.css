@@ -10,6 +10,508 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require bootstrap.css
+ *= require welcome.css
  *= require_self
  */
+
+@font-face {
+  font-family: 'Stencil';
+  src: url('Emtype Foundry - GeogrotesqueStencil C Md Regular.otf');
+}
+
+* {
+	color: #000;
+	font-family: 'Open Sans', sans-serif;	
+}
+
+/* general logo */
+
+.logo {
+	background-color: #FFF12D;	
+	color: #000;
+}
+
+.logo h1 {
+	font-family: 'Stencil', sans-serif;	
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 30px;
+	margin: 0px;
+	line-height: 1;
+}
+
+.logo h2 {
+	font-family: 'Open Sans', sans-serif;	
+	text-transform: lowercase;
+	font-weight: normal;
+	font-size: 10px;
+	margin: 0px;
+}
+
+/* navbar */
+
+.navbar .container {
+	margin-left: 0px;
+	margin-right: 0px;
+	width: 100%;
+	background-color: #000;
+}
+
+.navbar-default {
+	transition: none;
+}
+
+.navbar-default.navbar-fixed-top, .navbar-default.navbar-shrink {
+	padding: 10px 0;
+	background-color: #000;
+}
+
+.navbar-default .navbar-brand {
+	display: none;
+}
+
+.navbar-shrink .navbar-brand, 
+.navbar-shrink .navbar-brand:hover, 
+.navbar-shrink .navbar-brand:focus {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	
+	display: block;
+	height: auto;
+	text-transform: uppercase;
+	font-family: 'Stencil', sans-serif;	
+	border-radius: 10px;
+	width: 200px;
+	background-color: #FFF12D;	
+	color: #000;
+}
+
+.navbar-default .nav li a {
+	font-family: 'Open Sans', sans-serif;
+	text-transform: none;
+	color: #fff;
+}
+
+.navbar-default .nav li a:focus {
+	color: #fff;	
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .nav li a:hover {
+	color: #FFF12D;
+	background-color: #000;
+}
+
+.language-selection {
+	padding-top: 1em;
+	color: #aaa;
+}	
+
+.navbar-nav {
+	padding-right: 10px;
+}
+
+.set-locale {
+  cursor: pointer;
+	font-family: 'Open Sans', sans-serif;
+	color: #aaa;
+}
+
+.active-locale {
+  color: #FFF12D;	
+  cursor: default;
+}
+
+.navbar-default .navbar-toggle, .navbar-default .navbar-toggle:hover {
+	background-color: #FFF12D;	
+	border-color: #FFF12D;
+}
+
+.navbar-nav li:hover, .navbar-nav a:hover {
+	background-color: transparent !important;
+}
+
+/* header */
+
+header {
+	height: 100vh;
+}
+
+header .logo-left {
+	border-radius: 15px;
+	float: left;
+	position: relative;
+	top: 100px;
+	padding: 20px;
+	width: 300px;
+	text-align: right;
+	padding-left: 50px;
+}
+
+header .logo-left h1 {
+	font-size: 60px;
+}
+
+header .logo-left h2 {
+	font-size: 15px;
+}
+
+header .intro-text {
+	margin-top: 150px;
+	padding: 20px;
+	background-color: #fff;
+	color: #000;
+	float: right;
+	text-align: left;
+	width: 400px;
+}
+
+header .intro-text .intro-lead {
+	font-family: 'Stencil', sans-serif;		
+	font-style: normal;
+	font-size: 6em;
+	text-transform: uppercase;
+	line-height: 1em;
+}
+
+header .intro-text .intro-sublead {
+	font-family: 'Open Sans', sans-serif;			
+	font-style: normal;
+	font-size: 1em;
+}
+
+/* box */
+
+section#what {
+	background-image: url(/assets/sections/box.jpg);
+	background-size: cover;
+	height: 100vh;
+	text-transform: uppercase;
+	font-size: 25px;
+	position: relative;
+}
+
+.what-contents {
+	background-color: #fff;
+	padding: 10px;
+	width: 20%;
+  overflow: auto;
+	height: 80px;
+}
+.what-contents .num { 	font-family: 'Stencil', sans-serif;	
+margin-right: 10px; font-size: 60px; float: right; line-height: 60px;}
+.what-contents .item { font-family: 'Stencil', sans-serif;	font-size: 30px; float: right; width: 100px; line-height: 60px; vertical-align: middle;}
+
+.what-cards {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	padding-top: 70px;
+}
+
+.what-randomize-button {
+	font-family: 'Stencil', sans-serif;	
+	cursor: pointer;
+	background-color: #fff;
+	padding: 10px;
+	margin: 10px;	
+	width: 20%;
+	float: left;
+	text-align: center;
+}
+.what-randomize-button:active {
+	position: relative;
+  top: 2px;
+  left: 2px;
+}
+.what-missions {
+	font-family: 'Stencil', sans-serif;	
+	background-color: #fff;
+	padding: 10px;
+	margin: 10px;	
+	width: 20%;
+	float: right;
+	text-align: center;
+	position: relative;
+	top: 30px;	
+	z-index: 1 !important;
+}
+
+.what-society-card, .what-architecture-card {
+	border-radius: 25px;
+	padding: 30px 20px;
+	margin: 10px;	
+	width: 33%;
+	float: left;
+	text-align: center;
+	font-size: 50px;
+	height: 33%;
+	line-height: 50px;
+	position: absolute;	
+	z-index: 10;
+}
+
+.what-society-card {
+	background-color: #FFF12D;	
+	color: #000;
+	border: 5px solid #000;
+	top: 40%;
+	left: 20%;
+}
+.what-architecture-card {
+	background-color: #000;
+	border: 5px solid #FFF12D;
+	top: 35%;
+	right: 20%;
+}
+.what-architecture-card .card-content {
+	color: #fff;
+}
+.card-content {
+	font-family: 'Stencil', sans-serif;	
+	position: absolute;
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+		
+
+/* action */
+
+section#action {
+	background-image: url(/assets/sections/action.jpg);
+	background-size: cover;
+	height: 100vh;
+}
+
+.action-bg {
+	width: 100%;
+	background-color: #fff;
+	padding: 20px;
+}
+
+.action-bg h1 {
+	font-family: 'Stencil', sans-serif;	
+	font-size: 50px;
+	text-transform: uppercase;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.action-bg h4 {
+	font-family: 'Stencil', sans-serif;	
+	font-weight: normal;
+}
+
+section.portfolio .portfolio-item .portfolio-caption {
+	padding: 10px;
+}
+
+section.portfolio .portfolio-item .portfolio-link .portfolio-hover {
+	background-color: #FFF12D;
+	border-radius: 25px;
+}
+
+.img-responsive {
+	border-radius: 25px;
+}
+
+/* modal */
+
+.portfolio-modal .modal-content {
+	padding-top: 50px;
+}
+
+.modal-body h2 {
+	font-family: 'Stencil', sans-serif;	
+	font-size: 50px;
+	text-transform: uppercase;
+}
+
+.btn-primary, .btn-primary:hover {
+	background-color: #FFF12D;
+	border-color: #FFF12D;
+	color: #000;
+	font-weight: normal;
+	font-family: 'Stencil', sans-serif;
+}
+
+/* events & training */
+
+.events-training-bg {
+	background-image: url(/assets/sections/events.jpg);
+	background-size: cover;
+	height: 100vh;
+}
+
+.events-training-bg section {
+	background-color: #fff;
+	overflow: auto;
+	width: 70%;
+	position: relative;
+	min-height: 30vh;
+	padding: 0px;
+}
+
+.events-training-bg section h1 {
+  font-family: 'Stencil';	
+	position: absolute;
+	width: 50%;
+	padding: 20px;
+	margin: 0px;
+	font-size: 50px;
+}
+
+.events-training-bg section .logos {
+	position: absolute;
+	width: 50%;	
+	padding: 10px;
+}
+
+.events-training-bg section .logos img {
+	width: 75px;
+	float: left;
+	margin: 10px;
+}
+
+.events-training-bg section .content {
+	width: 50%;
+	padding: 20px;
+	font-family: "Open Sans", sans-serif;
+}
+
+/* events */
+
+section#events {
+	float: left;
+	top: 50px;
+}
+
+section#events h1, section#events .logos {
+	right: 0px;
+}
+
+section#events .logos {
+	bottom: 0px;
+	right: 0px;
+}
+
+/* training */ 
+
+section#training {
+	float: right;
+	top: 150px;
+}
+
+section#training h1 {
+	left: 0px;
+}
+
+section#training .logos {
+	left: 0px;
+	bottom: 0px;
+}
+
+section#training .logos img {
+	float: right;
+}
+	
+section#training .content {
+	float: right;
+}
+
+
+/* contact */
+
+section#contact {
+	background-image: url(/assets/sections/contact.jpg);
+	background-size: cover;
+	height: 100vh;
+	padding: 0px;
+}
+
+section#contact .right, section#contact .left {
+	width: 70%;
+	background-color: #fff;
+}
+
+section#contact .right {
+	margin-top: 100px;
+	float: right;
+}
+
+section#contact .right .credits {
+	width: 40%;
+	float: left;
+	text-align: right;
+	padding: 20px;
+}
+
+section#contact .right .credits h1 {
+	font-family: 'Stencil', sans-serif;	
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 50px;
+	margin: 0px;
+	line-height: 1;
+}
+
+section#contact .right .credits h2 {
+	font-family: 'Open Sans', sans-serif;	
+	text-transform: lowercase;
+	font-weight: normal;
+	font-size: 20px;
+	margin: 0px;
+	margin-bottom: 20px;
+}
+
+section#contact .right .content {
+	width: 60%;
+	float: right;
+	padding: 20px;
+}
+
+section#contact .left {
+	float: left;
+	margin-top: 40px;
+}
+
+section#contact .left h1 {
+	width: 40%;
+	float: right;
+	font-family: 'Stencil', sans-serif;	
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 50px;
+	margin: 0px;
+	padding: 20px;
+	line-height: 1;
+}
+
+section#contact .left .content {
+	width: 60%;
+	float: left;
+	padding: 20px;
+}
+
+
+/* helpful snippets */
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+

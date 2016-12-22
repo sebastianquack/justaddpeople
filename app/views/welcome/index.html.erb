@@ -1,0 +1,131 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+
+    <a class="navbar-brand page-scroll logo" href="#page-top">
+      <h1><%= fragment("logo title") %></h1>
+      <h2><%= fragment("logo subtitle") %></h2>
+    </a>
+
+    <div class="container">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a class="page-scroll" href="#page-top">Home</a></li>                
+                <%= render :partial => "menu_item", :locals => {:a_section => section("what")} %>
+                <%= render :partial => "menu_item", :locals => {:a_section => section("action")} %>
+                <%= render :partial => "menu_item", :locals => {:a_section => section("events")} %>
+                <%= render :partial => "menu_item", :locals => {:a_section => section("training")} %>
+                <%= render :partial => "menu_item", :locals => {:a_section => section("contact")} %>                
+            </ul>
+        <div class="language-selection" data-locale="<%= I18n.locale %>">
+          <span class="noselect set-locale <%= I18n.locale == :en ? 'active-locale' : '' %>" data-locale="en" >en</span> /
+          <span class="noselect set-locale <%= I18n.locale == :de ? 'active-locale' : '' %>" data-locale="de">de</span>
+        </div>  
+
+        </div>
+        <!-- /.navbar-collapse -->        
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+  <div class="logo logo-left">
+    <h1><%= fragment("logo title") %></h1>
+    <h2><%= fragment("logo subtitle") %></h2>
+  </div>
+  <div class="intro-text">
+    <div class="intro-lead"><%= fragment("intro lead") %></div>
+    <div class="intro-sublead"><%= fragment("intro sublead") %></div>
+  </div>
+</header>
+
+<!-- Sections -->
+
+<!-- box section -->
+<% what_section = section("what") %>
+<section id="<%= what_section.slug %>" class="bg-light-gray portfolio">
+  
+  <div class="what-contents"><span class="item"></span><span class="num"></span></div>
+  <div class="what-cards">
+    <div class="what-randomize-button noselect"><%= fragment("what randomize") %></div>
+    <div class="what-society-card"><div class="card-content"></div></div>
+    <div class="what-architecture-card"><div class="card-content"></div></div>  
+    <div class="what-missions"><%= fragment("what missions") %></div>
+  </div>
+  
+</section>
+
+<!-- Portfolio Grid Section -->
+<% action_section = section("action") %>
+<section id="<%= action_section.slug %>" class="bg-light-gray portfolio">
+      
+    <div class="action-bg">
+      <h1><%= fragment("action title") %></h1>
+        
+      <% @projects.each do |project| %>
+      <div class="row">
+          <div class="col-md-4 col-sm-6 portfolio-item">
+              <a href="#<%= project.slug %>" class="portfolio-link" data-toggle="modal">
+                  <div class="portfolio-hover">
+                      <div class="portfolio-hover-content">
+                          <i class="fa fa-plus fa-3x"></i>
+                      </div>
+                  </div>
+                  <img src="/assets/portfolio/26628458671_6d008dcf53_z.jpg" class="img-responsive" alt="">
+              </a>
+              <div class="portfolio-caption">
+                  <h4><%= project.title %></h4>
+              </div>
+          </div>
+      </div>
+      <% end %>
+      
+    </div>
+</section>
+
+<div class="events-training-bg">
+  <%= render :partial => "section", :locals => {:a_section => section("events")} %>
+  <%= render :partial => "section", :locals => {:a_section => section("training")} %>
+</div>
+
+<%= render :partial => "section", :locals => {:a_section => section("contact")} %>
+
+<!-- Portfolio Modals -->
+<!-- Use the modals below to showcase details about your portfolio projects! -->
+<% @projects.each do |project| %>
+<div class="portfolio-modal modal fade" id="<%= project.slug %>" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <!-- Project Details Go Here -->
+                        <h2><%= project.title %></h2>
+                        <img class="img-responsive img-centered" src="/assets/portfolio/26628458671_6d008dcf53_z.jpg" alt="">
+                        <div><%= project.description.html_safe if project.description %></div>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>
