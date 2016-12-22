@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: 'Stencil';
-  src: url('Emtype Foundry - GeogrotesqueStencil C Md Regular.otf');
+  src: url('/fonts/Emtype Foundry - GeogrotesqueStencil C Md Regular.otf');
 }
 
 * {
@@ -139,6 +139,8 @@
 
 header {
 	height: 100vh;
+	background-image: url(/images/header-bg.jpg);
+	background-size: cover;
 }
 
 header .logo-left {
@@ -187,7 +189,7 @@ header .intro-text .intro-sublead {
 /* box */
 
 section#what {
-	background-image: url(/assets/sections/box.jpg);
+	background-image: url(/images/sections/box.jpg);
 	background-size: cover;
 	height: 100vh;
 	text-transform: uppercase;
@@ -283,7 +285,7 @@ margin-right: 10px; font-size: 60px; float: right; line-height: 60px;}
 /* action */
 
 section#action {
-	background-image: url(/assets/sections/action.jpg);
+	background-image: url(/images/sections/action.jpg);
 	background-size: cover;
 	height: 100vh;
 }
@@ -346,7 +348,7 @@ section.portfolio .portfolio-item .portfolio-link .portfolio-hover {
 /* events & training */
 
 .events-training-bg {
-	background-image: url(/assets/sections/events.jpg);
+	background-image: url(/images/sections/events.jpg);
 	background-size: cover;
 	height: 100vh;
 }
@@ -431,7 +433,7 @@ section#training .content {
 /* contact */
 
 section#contact {
-	background-image: url(/assets/sections/contact.jpg);
+	background-image: url(/images/sections/contact.jpg);
 	background-size: cover;
 	height: 100vh;
 	padding: 0px;
