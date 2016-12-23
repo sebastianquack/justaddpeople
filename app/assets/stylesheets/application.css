@@ -25,6 +25,15 @@
 	font-family: 'Open Sans', sans-serif;	
 }
 
+a {
+	color: #000;
+}
+
+a:hover {
+	color: #FFF12D;
+	text-decoration: none;
+}
+
 /* general logo */
 
 .logo {
@@ -134,6 +143,7 @@
 .navbar-default .navbar-toggle, .navbar-default .navbar-toggle:hover {
 	background-color: #FFF12D;	
 	border-color: #FFF12D;
+	z-index: 10;
 }
 
 /* header */
@@ -206,7 +216,8 @@ section#what {
 .what-contents {
 	background-color: #fff;
 	padding: 10px;
-	width: 400px;
+	padding-left: 0px;
+	width: 410px;
 	height: 130px;
 }
 .what-contents .num { 	font-family: 'Stencil', sans-serif;	
@@ -309,7 +320,7 @@ section#action {
 	text-transform: uppercase;
 	margin-left: auto;
 	margin-right: auto;
-	width: 50%;
+	width: 100%;
 	margin-bottom: 20px;
 	text-align: center;
 	font-weight: normal;
@@ -394,7 +405,7 @@ section.portfolio .portfolio-item .portfolio-link .portfolio-hover {
 	width: 50%;
 	padding: 20px;
 	margin: 0px;
-	font-size: 50px;
+	font-size: 40px;
 	font-weight: normal;
 }
 
@@ -522,7 +533,7 @@ section#contact .left h1 {
 	font-family: 'Stencil', sans-serif;	
 	text-transform: uppercase;
 	font-weight: normal;
-	font-size: 50px;
+	font-size: 40px;
 	margin: 0px;
 	padding: 20px;
 	line-height: 1;
@@ -550,18 +561,189 @@ section#contact .left .content {
 
 /* mobile view */
 
+@media (min-width:769px) {
+	@media (max-width:941px) {
+		.nav > li > a, .language-selection {
+			padding-left: 7px;
+			padding-right: 7px;
+			font-size: 12px;
+		}
+		.language-selection {
+			padding-top: 12px;
+		}
+	}
+}
+
 @media (max-width:768px) {
+	
+	.navbar .container, .navbar-default.navbar-fixed-top, .navbar-default.navbar-shrink {
+		background-color: transparent;
+	}
+	
+	.navbar-default .navbar-collapse {
+		background-color: #000;
+		padding-bottom: 20px;
+		padding-top: 10px;
+		position: relative;
+		top: -70px;
+		z-index: 0;
+	}
+	
+	.navbar-default .navbar-brand, .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus,
+	.navbar-shrink .navbar-brand, .navbar-shrink .navbar-brand:hover, .navbar-shrink .navbar-brand:focus  {
+		position: absolute;
+		top: -20px;
+		right: -32px;
+		transform: rotate(-2deg);
+		padding: 20px 70px 5px 5px;	
+		width: 240px;	
+		display: block;
+		height: auto;
+		text-transform: uppercase;
+		font-family: 'Stencil', sans-serif;	
+		border-radius: 10px;
+		background-color: #FFF12D;	
+		color: #000;		
+		z-index: 1;
+	}
 	
 	header .logo-left {
 		display: none;
 	}
 	
-	.navbar-shrink .navbar-brand {
-		top: 0px;
-		right: -30px;
-		transform: rotate(0deg);
-		padding: 10px 10px 10px 10px;	
+	header .intro-text {
+		position: absolute;
+		bottom: 0%;
+		right: 0;
+		width: 80%;
 	}
+	
+	header .intro-text .intro-lead {
+		font-size: 10vw;
+	}
+	
+	section#what {
+		padding-top: 60px;
+	}
+	
+	.what-contents {
+		height: 90px;
+		width: 300px;
+		margin: 0;
+	}
+	
+	.what-contents .num {
+		font-size: 70px;
+		line-height: 70px;
+	}
+	
+	.what-contents .item {
+		font-size: 25px;
+		line-height: 70px;
+		width: 100px;
+	}
+	
+	.what-cards {
+		padding-top: 0px;
+	}
+
+	.what-randomize-button {
+		float: none;
+		top: auto;
+		width: 350px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 10;
+	}
+
+	.what-society-card, .what-architecture-card {
+		width: 280px;
+		height: 170px;
+		left: 0;
+		right: 0;
+		top: 0;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		float: none;
+	}
+	
+	.what-society-card {
+		transform: rotate(2deg);
+	}
+
+	.what-architecture-card {
+		transform: rotate(-2deg);
+	}
+	
+	.what-missions {
+		display: none;
+	}
+	
+	section#action {
+		background-position-x: -400px;
+	}
+	
+	.events-training-bg {
+		height: auto;
+	}
+
+	section#events, section#training {
+		top: 0px;
+	}
+	
+	section#training {
+		margin-top: 60px;
+	}
+	
+	section#events, section#training, section#contact .left, section#contact .right {
+		width: 100%;
+	}
+	
+	section#events .content {
+		padding-right: 0px;
+	}
+	
+	section#training .content {
+		padding-left: 0px;
+	}
+		
+	section#training h1, section#events h1, section#contact .left h1, section#contact .right .credits h1 {
+		font-size: 6vw;
+		padding-bottom: 10px;
+	}
+	
+	section#contact {
+		height: auto;
+	}
+	
+	section#contact .right, section#contact .left {
+		margin-top: 60px;
+	}
+	
+	section#contact .right .credits h2 {
+		font-size: 14px;
+	}
+	
+	section#contact .right .credits, section#contact .left .content {
+		float: right;
+	}
+
+	section#contact .right .content {
+		padding-right: 0px;
+	}
+	
+	section#contact .left .content {
+		padding-left: 0px;
+	}
+
+	section#contact .right .content, section#contact .left h1 {
+		float: left;
+	}
+
+	
+	
+	
 	
 	
 }
