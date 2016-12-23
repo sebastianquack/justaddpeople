@@ -83,7 +83,7 @@
                           <i class="fa fa-plus fa-3x"></i>
                       </div>
                   </div>
-                  <img src="<%= main_photo_url(project.flickr_set_id, 'z') %>" class="img-responsive" alt="">
+                  <img src="" data-flickr-set-id="<%= project.flickr_set_id %>" data-scale="z" class="flickr-set-main-url img-responsive" alt="">
               </a>
               <div class="portfolio-caption">
                   <h4><%= project.title %></h4>
@@ -119,9 +119,7 @@
                         <!-- Project Details Go Here -->
                         <h2><%= project.title %></h2>
                         <div><%= project.description.html_safe if project.description %></div>
-                        <% flickr_photo_urls(project.flickr_set_id, "z").each do |url| %>
-                          <img class="img-responsive img-centered" src="<%= url %>" alt="">
-                        <% end %>
+                        <div class="flickr-set" data-flickr-set-id="<%= project.flickr_set_id %>" data-scale="z"></div>
                         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                     </div>
                 </div>

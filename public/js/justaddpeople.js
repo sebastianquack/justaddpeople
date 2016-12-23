@@ -48,6 +48,30 @@ $(function() {
         }
       ]
     });
+        
+    flickrAPIKey = $('meta[name=flickrapi]').attr("content")
+    
+    $(".flickr-set-main-url").each(function() {
+      var setId = $(this).data("flickr-set-id")
+      var scale = $(this).data("scale")
+      var image = $(this)
+      src = flickrMainPhotoURL(setId, scale, flickrAPIKey, function(src) {
+        image.attr("src", src)        
+      })
+    })
+    
+    $('.modal').on('show.bs.modal', function(e) {
+        var target = $(e.target)[0]; // Clicked button element        
+        var setId = $("#" + target.id + " .flickr-set").data("flickr-set-id")
+                
+        if($("#" + target.id + " .flickr-set").children().length == 0) {        
+          flickrPhotoURLs(setId, "z", flickrAPIKey, function(urls) {
+            urls.forEach(function(url) {
+              $("#" + target.id + " .flickr-set").append('<img src="'+url+'" class="img-responsive img-centered" alt="">')
+            })          
+          })
+        }
+    })    
 });
 
 // Highlight the top nav as scrolling occurs

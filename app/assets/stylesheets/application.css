@@ -548,3 +548,20 @@ section#contact .left .content {
 }
 
 
+/* mobile view */
+
+@media (max-width:768px) {
+	
+	header .logo-left {
+		display: none;
+	}
+	
+	.navbar-shrink .navbar-brand {
+		top: 0px;
+		right: -30px;
+		transform: rotate(0deg);
+		padding: 10px 10px 10px 10px;	
+	}
+	
+	
+}
