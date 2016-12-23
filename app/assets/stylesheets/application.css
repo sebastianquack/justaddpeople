@@ -367,6 +367,10 @@ section.portfolio .portfolio-item .portfolio-link .portfolio-hover {
 	font-family: 'Stencil', sans-serif;
 }
 
+.portfolio-modal .close-modal {
+	z-index: 100;
+}
+
 /* events & training */
 
 .events-training-bg {

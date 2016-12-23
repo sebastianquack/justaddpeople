@@ -51,3 +51,5 @@ gem 'devise'
 gem 'ckeditor_rails'
 gem 'traco'
 
+gem 'httparty'
+

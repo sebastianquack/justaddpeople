@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161221163320) do
+ActiveRecord::Schema.define(version: 20161223131009) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -57,9 +57,7 @@ ActiveRecord::Schema.define(version: 20161221163320) do
   create_table "projects", force: :cascade do |t|
     t.string   "title_de"
     t.string   "title_en"
-    t.string   "subtitle_de"
-    t.string   "subtitle_en"
-    t.string   "flickr_set_url"
+    t.string   "flickr_set_id"
     t.text     "description_de"
     t.text     "description_en"
     t.datetime "created_at",     null: false
