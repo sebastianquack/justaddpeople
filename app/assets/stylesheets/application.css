@@ -306,7 +306,7 @@ margin-right: 10px; font-size: 110px; float: right; line-height: 110px;}
 	width: 100%;
 	font-size: calc(0.6em + 1vw);
 	line-height: calc(0.6em + 1vw);
-	padding: 20px;
+	padding: 15px;
 }
 
 .card-content.long {
