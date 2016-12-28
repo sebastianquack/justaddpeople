@@ -272,31 +272,45 @@ margin-right: 10px; font-size: 110px; float: right; line-height: 110px;}
 }
 
 .what-society-card {
-	background-color: #FFF12D;	
-	color: #000;
-	border: 5px solid #000;
 	top: 45%;
 	left: 18%;
 	transform: rotate(7deg);
 	
 }
 .what-architecture-card {
-	background-color: #000;
-	border: 5px solid #FFF12D;
 	top: 40%;
 	right: 22%;
-	transform: rotate(-7deg);
-	
+	transform: rotate(-7deg);	
 }
-.what-architecture-card .card-content {
+
+.what-society-card-color {
+	background-color: #FFF12D;	
+	color: #000;
+	border: 5px solid #000;	
+}
+.what-architecture-card-color {
+	background-color: #000;
+	border: 5px solid #FFF12D;
+}
+.what-architecture-card-color .card-content {
 	color: #fff;
 }
+
 .card-content {
 	font-family: 'Stencil', sans-serif;	
 	position: absolute;
 	top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+	word-wrap: break-word;
+	width: 100%;
+	font-size: calc(0.6em + 1vw);
+	line-height: calc(0.6em + 1vw);
+	padding: 20px;
+}
+
+.card-content.long {
+	font-size: calc(0.4em + 1vw);
 }
 		
 

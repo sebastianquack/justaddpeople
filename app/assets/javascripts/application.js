@@ -68,19 +68,44 @@ function updateWhatsInTheBox() {
 
 /* generate random missions */
 
-var societyCards = [
-  {en: "vegan", de: "Vegan/e"},  
-  {en: "terror proof", de: "Terror-sichere/r"},
-  {en: "brutalist", de: "Brutalistische/r"}        
-]
-
-var architectureCards = [
-  {en: "bus stop", de: "Bushaltestelle"},  
-  {en: "windmill", de: "Windmühle"},
-  {en: "kiosk", de: "Späti"}    
-]
+function addWithLongClass(text, element) {
+  if(text.length > 12) {
+    element.addClass("long")
+  }
+  element.html(text)
+}
 
 function handleRandomize() {
-  $(".what-society-card .card-content").html(societyCards[Math.floor(Math.random() * societyCards.length)][currentLocale])
-  $(".what-architecture-card .card-content").html(architectureCards[Math.floor(Math.random() * architectureCards.length)][currentLocale])
+  var societyIndex = Math.floor(Math.random() * societyCards.length)
+  var architectureIndex = Math.floor(Math.random() * architectureCards.length)
+
+  var architectureContent = architectureCards[architectureIndex][currentLocale]
+  var societyContent = societyCards[societyIndex][currentLocale]
+  
+  // add german adjective form if needed
+  if(currentLocale == "de" && !societyCards[societyIndex].flip && societyCards[societyIndex].de_gender) {
+    if(architectureCards[architectureIndex].de_gender == "m") {
+      societyContent += "r"
+    }
+    if(architectureCards[architectureIndex].de_gender == "s") {
+      societyContent += "s"
+    }
+  }
+
+  $(".what-society-card, .what-architecture-card").removeClass("what-society-card-color")
+  $(".what-society-card, .what-architecture-card").removeClass("what-architecture-card-color")
+  $(".card-content").removeClass("long")
+    
+  if(!societyCards[societyIndex].flip) {
+    $(".what-society-card").addClass("what-society-card-color")
+    $(".what-architecture-card").addClass("what-architecture-card-color")
+    addWithLongClass(societyContent, $(".what-society-card .card-content"))
+    addWithLongClass(architectureContent, $(".what-architecture-card .card-content"))
+  } else {
+    $(".what-society-card").addClass("what-architecture-card-color")
+    $(".what-architecture-card").addClass("what-society-card-color")
+    addWithLongClass(architectureContent, $(".what-society-card .card-content"))
+    addWithLongClass(societyContent, $(".what-architecture-card .card-content"))
+  }
+
 }
