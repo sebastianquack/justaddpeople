@@ -52,7 +52,7 @@ a:hover {
 
 .logo h2 {
 	font-family: 'Open Sans', sans-serif;	
-	text-transform: lowercase;
+	text-transform: none;
 	font-weight: normal;
 	font-size: 9px;
 	margin: 0px;
@@ -310,7 +310,7 @@ margin-right: 10px; font-size: 110px; float: right; line-height: 110px;}
 }
 
 .card-content.long {
-	font-size: calc(0.3em + 1vw);
+/*	font-size: calc(0.3em + 1vw);*/
 }
 		
 

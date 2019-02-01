@@ -49,7 +49,7 @@ function handleLanguageChange(event) {
 
 var whatContents = [
   {num: 72, en:"Balls", de:"Bälle"},
-  {num: 72, en:"Sticks", de:"Stöcke"},
+  {num: 72, en:"Sticks", de:"Stäbe"},
   {num: 144, en:"Cards", de:"Karten"},
 ]  
 var whatIndex = 0
