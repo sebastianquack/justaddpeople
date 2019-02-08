@@ -1,3 +1,19 @@
+== steps for deployment / updates on uberspace
+
+locally:
+
+`git push origin master`
+
+on uberspace:
+
+`git pull origin master`
+
+`bundle exec rake assets:precompile`
+
+`svc -du ~/service/justaddpeople`
+
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the
